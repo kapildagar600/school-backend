@@ -19,7 +19,9 @@ app.use('/schoolImages', express.static(path.join(process.cwd(), 'schoolImages')
 
 
 app.use('/api', routes);
-
+app.get('/',(req,res)=>{
+    res.json({message: "api working fine!"})
+})
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
